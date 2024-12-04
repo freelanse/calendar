@@ -1,0 +1,64 @@
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    pointer-events: none; /* Исключаем подсказку из событий */
+    transition: opacity 0.3s;
+}
+
+.day-cell:hover .tooltip {
+    display: block;
+    pointer-events: auto; /* Включаем интерактивность при наведении */
+    opacity: 1;
+}
+
+
+#calendar-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+}
+.calendar-day {
+    padding: 10px;
+    background: #f0f0f0;
+    text-align: center;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+.calendar-day:hover {
+    background: #d0d0ff;
+}
+.calendar-tooltip {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 10;
+}
+.calendar-tooltip a {
+    display: block;
+    color: #0073aa;
+    text-decoration: none;
+    margin: 5px 0;
+}
+.calendar-tooltip a:hover {
+    text-decoration: underline;
+}
+.calendar-day.no-posts {
+    color: #ccc;
+    pointer-events: none;
+    cursor: default;
+}
+
+.calendar-day.has-posts {
+    cursor: pointer;
+    color: #000;
+}
+
